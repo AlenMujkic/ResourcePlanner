@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Resource Planner</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="JavaScriptResourcePlanner.js"></script>
+	</head>
+	<body onload="javascript:hideElement(FilterTable)"> 
+		<!--links for menu are not implemented-->
+		<ul>
+			<li><a class="active" href="#reports">Reports</a></li>
+			<li><a href="#teams">Team(s)</a></li>
+		</ul>
+		<hr> <!--Horizontal line-->
+		<br>
+		<div style="border: 1px solid;border-radius:15px;">
+			<button id="Filter" type="button" class="FilterButtonClass" onclick="FilterButtonFunction()">Filter</button>
+			<table id="FilterTable" style="padding-top:15px;padding-bottom:5px;padding-left:10px">
+				<tr><th>
+						<select id="SelectTeam" onchange = "javascript:AddYearOptions()">
+							<option value="Select Team">Select Team</option>
+						</select>
+					</th>
+					<th>
+						<select id="SelectYear">
+							<option value="Select Year">Select Year</option>
+						</select>
+					</th>
+					<th>
+						<button id="Show" type="button" onclick="ShowButtonFunction()">Show</button>
+					</th>
+				</tr>
+			</table>
+		</div>
+		<br>
+		<div id="TeamMainDiv">
+			<div id="TeamName" class="TeamNameClass">
+				<!--Here will be team name which we choose from the menu-->
+			</div>
+			<br>
+			<div id="Team">
+				<!--Here will be table of workers from choosen team-->
+			</div>
+		</div>
+		<div id="WorkerMainDiv" class="WorkerTableClass">
+			<div id="WorkerName" style="float:left" class="WorkerNameClass">
+				<!--Here will be choosen worker name and month-->
+			</div>
+			<div align="right">
+			<button onclick="CloseFunction()">&times;</button>
+			</div>
+			<br>
+			<div id="Worker">
+				<!--Here will be worker table for choosen month-->
+			</div>
+			<br>
+			<div>
+				<button onclick="SaveButtonFunction()">Save</button>
+			</div>
+		</div>
+	</body>
+</html>
